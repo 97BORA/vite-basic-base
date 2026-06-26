@@ -1,4 +1,4 @@
-# vite-basic-base / 20260627
+# 20260627 / vite-basic-base
 
 Vite + React + TypeScript 기본 프로젝트에서 불필요한 예제 코드와 기본 assets를 정리한 베이스 프로젝트입니다.
 
