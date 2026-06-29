@@ -129,3 +129,55 @@ lint-staged는 staged 파일에 대해 ESLint와 Prettier를 실행합니다.
 - `dist/`는 `npm run build`로 생성되는 빌드 결과물이므로 Git에 올리지 않습니다.
 - 프로젝트를 받은 뒤에는 `npm install` 또는 `npm ci`를 실행합니다.
 - 개발 서버는 `npm run dev`로 실행합니다.
+
+---
+
+## 20260629 / 수정 및 설명
+
+**[ 추가 ]**
+**.vscode/settings.json**
+
+```json
+"eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+],
+```
+
+`.js → javascript`<br>
+`.jsx → javascriptreact`<br>
+`.ts → typescript`<br>
+`.tsx → typescriptreact`<br>
+
+VS Code에서 .js, .jsx, .ts, .tsx 파일을 ESLint 검사 대상으로 인식하도록 설정
+
+**[ 연결 / 설명 ]**
+
+```json
+"editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+}
+```
+
+파일 저장 시 ESLint가 자동 수정 가능한 항목을 수정
+
+`예시 : <div></div> → <div />`
+
+---
+
+**[ 추가 ]**
+**eslint.config.js**
+
+```js
+'react/self-closing-comp': [
+    'warn',
+    {
+        component: true,
+        html: true,
+    },
+],
+```
+
+JSX 태그를 자동으로 짧게 정리해주는 규칙
